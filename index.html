@@ -7,9 +7,19 @@
   <title>pwa manifest demo</title>
   <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
   <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-  <div>Hello PWA</div>
+  <h3>Hello PWA</h3>
   <div>你好呀</div>
   <script>
     if ('serviceWorker' in navigator) {

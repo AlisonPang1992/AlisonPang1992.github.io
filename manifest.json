@@ -25,7 +25,7 @@
     ],
     "start_url":".",
     "display":"standalone",
-    "background_color":"yellow",
-    "theme_color":"pink",
+    "background_color":"#1c1d24",
+    "theme_color":"#f1ce8d",
     "lang":"en"
 }
