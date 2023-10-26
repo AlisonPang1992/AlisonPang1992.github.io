@@ -47,13 +47,14 @@
             }
           })
         })
-        .catch(function () {
+        .catch(function (e) {
+          document.getElementsByTagName('body')[0].innerText = JSON.stringify(e)
           if (Notification.permission === 'denied') {
             // 用户拒绝了订阅请求
           }
         });
     }
-    if ('serviceWorker' in navigator && 'PushManager' in window) {
+    if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js')  // 1. 注册Service Worker
         .then(function (reg) { });
       navigator.serviceWorker.ready.then(function (reg) { subscribe(reg) });
