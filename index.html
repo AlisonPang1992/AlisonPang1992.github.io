@@ -37,16 +37,16 @@
           document.getElementsByTagName('body')[0].innerText = JSON.stringify(subscription)
         console.log("%c subscribe -> subscription", 'color: red; background: yellow; font-size: 20px;', subscription)
           // 提交给服务器的数据
-          $.ajax({
-            type: 'POST',
-            url: 'http://localhost:3000/endpoint',
-            data: {
-              endpoint: JSON.stringify(subscription),
-            },
-            success: function (result) {
-              console.log(result)
-            }
-          })
+          // $.ajax({
+          //   type: 'POST',
+          //   url: 'http://localhost:3000/endpoint',
+          //   data: {
+          //     endpoint: JSON.stringify(subscription),
+          //   },
+          //   success: function (result) {
+          //     console.log(result)
+          //   }
+          // })
         })
         .catch(function (e) {
           console.log("%c subscribe -> e", 'color: red; background: yellow; font-size: 20px;', e)
