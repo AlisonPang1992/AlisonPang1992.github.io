@@ -1,36 +1,88 @@
 {
-    "name":"PWA manifest demo",
-    "short_name":"manifest",
-    "icons":[
+  "name": "PWA manifest demo",
+  "short_name": "manifest",
+  "description": "Awesome application that will help you achieve your dreams.",
+  "icons": [
+    {
+      "src": "icons/icon_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "screenshots" : [
+    {
+      "src": "icons/image1.png",
+      "sizes": "480x352",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Homescreen of Awesome App"
+    },
+    {
+      "src": "icons/image2.png",
+      "sizes": "480x352",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "List of Awesome Resources available in Awesome App"
+    }
+  ],
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example.app1",
+      "id": "com.example.app1"
+    }, {
+      "platform": "itunes",
+      "url": "https://itunes.apple.com/app/example-app1/id123456789"
+    }, {
+      "platform": "windows",
+      "url": "https://apps.microsoft.com/store/detail/example-app1/id123456789"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today's agenda",
+      "url": "/today",
+      "description": "List of events planned for today",
+      "icons": [
         {
-            "src": "icons/icon_144x144.png",
-            "sizes": "144x144",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/icon_192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
+          "src": "icons/icon_96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
         }
-    ],
-    "shortcuts" : [
+      ]
+    },
+    {
+      "name": "New event",
+      "url": "/create/event",
+      "icons": [
         {
-          "name": "Today's agenda",
-          "url": "/today",
-          "description": "List of events planned for today"
-        },
-        {
-          "name": "New event",
-          "url": "/create/event"
-        },
-        {
-          "name": "New reminder",
-          "url": "/create/reminder"
+          "src": "icons/icon_96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
         }
-      ],
-    "start_url":"/index.html",
-    "display":"standalone",
-    "background_color":"yellow",
-    "theme_color":"pink",
-    "lang":"en"
+      ]
+    },
+    {
+      "name": "New reminder",
+      "url": "/create/reminder",
+      "icons": [
+        {
+          "src": "icons/icon_96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "yellow",
+  "theme_color": "pink",
+  "lang": "en"
 }
