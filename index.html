@@ -10,13 +10,31 @@
 </head>
 <body>
   <div>Hello PWA</div>
-  <div>你好呀</div>
+  <div id="click">你好呀</div>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('./sw.js')
         .then(() => { console.log('Service Worker Registered'); });
     }
+    window.addEventListener('beforeinstallprompt', function(event) { // 监听到可安装事件，进行触发提醒用户
+    console.log("%c event", 'color: red; background: yellow; font-size: 20px;', event)
+      document.getElementById('click').onclick = (e) => {
+      console.log("%c document.getElementById -> e", 'color: red; background: yellow; font-size: 20px;', e)
+      event.prompt()
+                event.userChoice //判断用户是否安装
+                    .then(function(e) {
+                        install = true
+                    })   
+      }
+            // setTimeout(function() {
+            //     event.prompt()
+            //     event.userChoice //判断用户是否安装
+            //         .then(function(e) {
+            //             install = true
+            //         })    
+            // }, 2000)
+        }, { once: true })
   </script>
 </body>
 </html>
