@@ -28,7 +28,8 @@
       return outputArray;
     }
     function subscribe(serviceWorkerReg) {
-      serviceWorkerReg.pushManager.subscribe({ // 2. 订阅eeesss
+      if (serviceWorkerReg.pushManager) {
+        serviceWorkerReg.pushManager.subscribe({ // 2. 订阅eeesss
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array('BDfgj3cVynC9lAec3srx67cspV4ONWlK9-tUfQpmcAhCuzGc-BdpuPhbH7zFzmxkAbK5WhgYYiIHMzfaJf22R44')
       })
@@ -48,11 +49,16 @@
           })
         })
         .catch(function (e) {
+          console.log("%c subscribe -> e", 'color: red; background: yellow; font-size: 20px;', e)
           document.getElementsByTagName('body')[0].innerText = JSON.stringify(e)
           if (Notification.permission === 'denied') {
             // 用户拒绝了订阅请求
           }
         });
+      } else {
+        document.getElementsByTagName('body')[0].innerText = '不支持'
+      }
+
     }
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js')  // 1. 注册Service Worker
