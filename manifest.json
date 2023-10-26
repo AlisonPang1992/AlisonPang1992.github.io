@@ -46,7 +46,7 @@
   ],
   "shortcuts": [
     {
-      "name": "Today's agenda",
+      "name": "Action1",
       "url": "/today",
       "description": "List of events planned for today",
       "icons": [
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "name": "New event",
+      "name": "Action2",
       "url": "/create/event",
       "icons": [
         {
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "name": "New reminder",
+      "name": "Action3",
       "url": "/create/reminder",
       "icons": [
         {
