@@ -1,20 +1,17 @@
-self.addEventListener('install', (e) => {
-    e.waitUntil(
-      caches.open('manifest-store').then((cache) => cache.addAll([
-        '/',
-        '/index.html',
-        '/icons/icon_144x144.png',
-        '/icons/icon_152x152.png',
-        '/icons/icon_192x192.png',
-        '/icons/icon_512x512.png',
-      ])),
-    );
-  });
-  
-  self.addEventListener('fetch', (e) => {
-    console.log(e.request.url);
-    e.respondWith(
-      caches.match(e.request).then((response) => response || fetch(e.request)),
-    );
-  });
-  
+
+self.addEventListener('push', function (event) {
+    if (event.data) {
+        var promiseChain = Promise.resolve(event.data.json())
+                .then(data => {
+                    self.registration.showNotification('你好', data)
+                    // 监听通知点击事件
+                    self.addEventListener('notificationclick', function (e) {
+                        // 关闭通知
+                        e.notification.close()
+                        // 打开网页
+                        e.waitUntil(clients.openWindow(e.notification.data.url))
+                    })
+                });
+        event.waitUntil(promiseChain);
+    }
+});
