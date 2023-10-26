@@ -50,7 +50,7 @@
         })
         .catch(function (e) {
           console.log("%c subscribe -> e", 'color: red; background: yellow; font-size: 20px;', e)
-          document.getElementsByTagName('body')[0].innerText = JSON.stringify(e)
+          document.getElementsByTagName('body')[0].innerText = e
           if (Notification.permission === 'denied') {
             // 用户拒绝了订阅请求
           }
